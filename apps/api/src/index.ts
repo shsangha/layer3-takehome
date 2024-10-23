@@ -1,9 +1,14 @@
-import { createServer } from "./server";
-import { log } from "@repo/logger";
+import { app } from './app'
+import logger from '@repo/logger'
+import dotenv from 'dotenv'
 
-const port = process.env.PORT || 3001;
-const server = createServer();
+dotenv.config()
 
-server.listen(port, () => {
-  log(`api running on ${port}`);
-});
+const port = app.get('port')
+const host = app.get('host')
+
+process.on('unhandledRejection', (reason) => logger.error('Unhandled Rejection %O', reason))
+
+app.listen(port).then(() => {
+  logger.info(`Feathers app listening on http://${host}:${port}`)
+})

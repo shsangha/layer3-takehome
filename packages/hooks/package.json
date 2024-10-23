@@ -1,10 +1,8 @@
 {
-  "name": "@repo/ui",
+  "name": "@repo/hooks",
   "version": "0.0.0",
   "exports": {
-    "./scripts": "./src/scripts/index.ts",
-    "./components": "./src/components/index.ts",
-    "./icons": "./src/icons/index.ts"
+    ".": "./src/index.ts"
   },
   "scripts": {
     "lint": "eslint \"**/*.ts*\" --max-warnings 0"
@@ -18,9 +16,9 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@mantine/core": "^7.13.3",
     "@mantine/hooks": "^7.13.3",
-    "@tabler/icons-react": "^3.19.0",
-    "react": "^18.2.0"
+    "@uidotdev/usehooks": "^2.4.1",
+    "i": "^0.3.7",
+    "npm": "^10.9.0"
   }
 }
